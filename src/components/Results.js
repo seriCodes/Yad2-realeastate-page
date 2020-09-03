@@ -126,6 +126,7 @@ let resultsCenterComponents;
 
     return (
         <div>
+ 
         <div id={resultId} class ="result" onClick={(e)=>{
             AccordionHandlerObj.toggleAcorddion(resultDetailsAccordion,6,4)
             ModalStylerObj.toggleModal(contactId,e)
@@ -184,7 +185,6 @@ let resultsCenterComponents;
  </Button>
        <ModalImagesSlides id={ImagesModalId} images={props.images}></ModalImagesSlides>
         </div>
-
         </div>
 
         <ResultAccordion id={resultDetailsAccordion} description={props.description} entryDate={props.entryDate} isParking={props.isParking}></ResultAccordion>

@@ -33,15 +33,21 @@ let contentWrapperTag = document.getElementById("content-wrapper")
 // content-wrapper let body= document.getRootNode("body")
 AppContainerStylerObj.setBody(document.body)
 AppContainerStylerObj.basic(mainArea)
-
+ContainersStructureObj.keyValueStyleMaker(mainArea,{
+"background-color":"#ededed",
+    "min-height":"30rem",
+})
 ContainersStructureObj.flexRow(mainArea,{})
 let footerArea= document.getElementById("footer-area-container")
+
 AppContainerStylerObj.basic(footerArea)
 
 ContainersStructureObj.flexRow(footerArea,{})
 ContainersStructureObj.keyValueStyleMaker(footerArea,{
     "background-color":'#363636',
     color:'white',
+   
+
 })
 let greenButtonArray= Array.from(document.getElementsByClassName("greenButton"))  
         for (const key of greenButtonArray) {

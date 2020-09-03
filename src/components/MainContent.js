@@ -1,5 +1,6 @@
 import React, {useEffect, useState} from 'react'
 import {v1 as uuidv1} from "uuid";
+import {filterHandler} from "./filterHandler";
 
 ////continue
 // import ResultsFilter from './ResultsFilter'
@@ -13,27 +14,47 @@ import {Results} from './Results'
 import {ContainersStructure} from "./ContainersStructure";
 import {Pagination} from "./Pagination";
 
+import {ResultsFilter} from './ResultsFilter'
 
 import data from './database'
+
 // import { FiltersContext} from '../contexts/FilterContext'
 // import { SorterContext} from '../contexts/SorterContext'
-
+let renderCounter=1
 export const MainContent = () => {
+    const filterHandlerObj= new filterHandler()
+
+    const [filterState,setFilter]=useState({})
+    console.log('filterState fm mai', filterState)
+ 
+// console.log('renderCounter',renderCounter++)
+console.log('filterState',filterState)
     const ContainersStructureObj= new ContainersStructure()
-    console.log('data')
+ 
+    console.log('data log')
     console.log(data)
+
+  let filteredData = filterHandlerObj.filterData(filterState,data)
     const [currentPage,setCurrentPage]=useState(1)
     console.log('currentPage',currentPage)
     let page=currentPage;
     let resultsAmountPerPage=6
-    const pageCount=Math.ceil(data.length/resultsAmountPerPage)
+    const pageCount=Math.ceil(filteredData.length/resultsAmountPerPage)
 // alert(Math.ceil(pageCount))
     let dataSliceInitialPosition=(page-1)*resultsAmountPerPage;
     let dataSliceEndPosition=dataSliceInitialPosition+resultsAmountPerPage 
-   let dataPage= data.slice(dataSliceInitialPosition,dataSliceEndPosition)
+   let dataPage= filteredData.slice(dataSliceInitialPosition,dataSliceEndPosition)
+//    const [isResized,setisResized]=useState(false)
+
+//    useEffect(()=>{
+// if(isResized){
+//   setisResized(false)
+
+// }
+// },[isResized])
 
     useEffect(()=>{
-
+       
         // let resultRightRightImagesArray= Array.from(document.getElementsByClassName("result-right-right-Images"))  
         // for (const key of resultRightRightImagesArray) {
         //     ContainersStructureObj.keyValueStyleMaker(key,{
@@ -197,13 +218,16 @@ textAlign:"right"
 
     let filtersComponentRight;
 let filtersComponentLeft;
-    let reportWindowSize= ()=>{
+    // let reportWindowSize= ()=>{
+        // setisResized(true)
+
         //  if(headerObj.getWindowWidth(window.innerWidth)!=isBigScreen){
         //     console.log('change f/m main', isBigScreen)
         //     setisBigScreen(headerObj.getWindowWidth(window.innerWidth)) 
         // }
-     }
-    window.addEventListener('resize', reportWindowSize);
+    //  }
+
+    // window.addEventListener('resize', reportWindowSize);
 
     // if(isBigScreen){
     //     console.log('change f/m isBigScreen', isBigScreen)
@@ -219,12 +243,8 @@ let filtersComponentLeft;
     
     return (
         <div className="MainContent-Container">
-   
         <div className="MainContent"> 
-        <div className="MainContent-left-AllScreens">
-        <div className="ResultsFilter-up-small-Screen">
-        {filtersComponentLeft}
-        </div>
+      <ResultsFilter filter={filterState} setFilter={setFilter}></ResultsFilter>
 
         <div className="Results-sorter-container">
      {
@@ -268,15 +288,11 @@ images={item["images"]}
 } 
         </div>
         
-        </div>
-
-        <div className="ResultsFilter-right-big-Screen">
-        
-        {filtersComponentRight}
-
-        </div>
-        <Pagination currentPage={currentPage} setcurrentPageLink={setCurrentPage} pageCount={pageCount}></Pagination>
+ 
        
+       {dataPage.length>0 && <Pagination currentPage={currentPage} setcurrentPageLink={setCurrentPage} pageCount={pageCount}
+         ></Pagination>
+        }
         </div> 
         </div>
     )

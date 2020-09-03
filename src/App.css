@@ -1,7 +1,28 @@
 .App {
   text-align: center;
+  /* background-color: #282c34; */
+  /* min-height :100%; */
 }
+#root{
+  /* min-height :100vh; */
 
+}
+html {
+  /*     height: 100vh; */
+      height: 100%;
+
+}
+/* body {
+      height: 100vh;
+      margin: 0;
+      padding: 0;
+      background-color: #FFCC00;
+  border-style: solid;
+  border-color: blue;
+  border-width: 3px;
+
+
+  } */
 .App-logo {
   height: 40vmin;
   pointer-events: none;
@@ -44,3 +65,7 @@
       border-color: greenyellow;
    border-width: 6px; */
 }
+
+/* body > #root > div {
+  height: 100vh;
+} */

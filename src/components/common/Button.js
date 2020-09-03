@@ -11,7 +11,9 @@ export const Button = (props) => {
         }
         style={props.style}
         onMouseOver={props.onMouseOver}
-        >
+        customInformation={props.customInformation} 
+       title="check" 
+       value={props.value}>
             {props.children}
         </div>
     )
