@@ -1,0 +1,47 @@
+.shadower_images{
+transition: opacity 1s linear;
+    width: 100% ;
+    height:  100% ;
+    position: fixed ;
+
+    top: 0; 
+left: 0;
+    z-index: 2;
+}
+.shadower_images_opened{
+    background-color : #373737 ;
+    opacity:1;
+}
+.shadower_images_closed{
+    opacity:0;
+}
+.displayNone{
+    display:none; 
+    /* width: 0%; */
+}
+
+
+.image-slider-img{
+    pointer-events : none;
+    user-select : none;
+    /* cursor:default; */
+    /*cursor ?? */
+
+}
+.imagesSlide-wrraper{
+    position: fixed ;
+    width: 100% ;
+        height:  100% ;
+         background-color : #373737 ;
+    left:  20% ;
+    top:  10% ; 
+    width: 60% ;
+    height:  65% ;
+     background-color :'#373737';
+ 
+    border: 0.0625 rem solid #888 ;
+    border-radius : 0.5 rem;
+
+padding: 0.5 rem 0.5 rem 0.5 rem 0.5 rem; 
+}
+ 

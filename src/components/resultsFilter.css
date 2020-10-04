@@ -1,0 +1,107 @@
+.ResultsFilter-container{
+    margin:2rem 0rem;
+    border-radius: 4px;
+    position: relative;
+    width: 100%;
+    padding: 0.5rem;
+    background-color: #fff;
+    box-shadow: 0 2px 6px 0 rgba(0,0,0,.1);
+ }
+.ResultsFilter-container > h3{
+    direction: rtl;
+}
+
+
+.ResultsFilter-from{
+    margin : 0.625rem 0.625rem 0.625rem 0.625rem;
+    padding : 0.625rem 0.625rem 0.625rem 0.625rem;
+    font-size:1rem;
+    font-weight : bold;
+    display: flex;
+    flex-direction:column ;
+
+}
+
+
+#form-filter-Id div{
+    /* direction: rtl; */
+    text-align: right;
+}
+#form-filter-Id label{
+    color: #363636;
+     font-size:1rem;
+}
+ 
+
+input[type=number] { -moz-appearance:textfield;}
+
+  input::-webkit-outer-spin-button,
+  input::-webkit-inner-spin-button {
+  -webkit-appearance: none; 
+  margin: 0;
+  /* border: 1px solid red; */
+}
+ 
+
+#form-filter-Id input:not([type=submit]){ 
+    margin : 0.225rem 0;
+    box-sizing: border-box;
+
+        font-family: Rubik,sans-serif;
+        font-size: 1rem;
+        outline: none;
+        padding: 10px;
+        width: 100%;
+        border: 1px solid #ccc;
+        border-radius: 1px;
+        background-color: #fff;
+        padding:0.725rem 1rem;
+
+        height:  2rem; 
+}
+#form-filter-Id input[type=submit]{
+    background-color: #ff7100;
+    border-color: #d86000;
+    border-radius: 5px;
+    border: 1px solid #eee;
+    outline: none;
+    margin : 0.225rem 0;
+        height:  2rem; 
+         padding-bottom: 1.725rem;
+        padding-top:0;
+
+}
+#form-filter-Id input[type=submit]:hover{
+    background-color: #d86000;
+
+
+}
+.submit-container
+{
+    order:+1;
+    display: flex;
+    flex-direction: column;
+    /* background-color: red; */
+            /* height:  2rem;  */
+          
+
+
+
+}
+.submit-container label{
+    visibility: hidden;
+}
+
+@media(min-width:1362px ){
+    .ResultsFilter-from{ 
+        display: flex;
+        flex-direction:row;
+        justify-content : space-around;
+    
+    }
+   .submit-container
+{
+order: 0;
+}
+    
+}

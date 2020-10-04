@@ -1,13 +1,15 @@
 class AccordionHandler{
     constructor(){}
-    toggleAcorddion(id,height,duration){
+    toggleAcorddion(id,height,duration,display="flex"){
         var elem = document.getElementById(id);   
         // var width = 0;
-        elem.style.display="flex"
+        elem.style.display=display
         // "block"
-        var id;
+        var  IntervalId;
         let compareResult=elem.style.height;
         console.log(elem.style.height)
+
+        
         if(compareResult && compareResult.includes("rem")){ 
             compareResult=Number(compareResult.slice(0,-3))
             console.log(compareResult)
@@ -18,7 +20,7 @@ class AccordionHandler{
             function frame() {
                 compareResult=Number(compareResult)
               if (compareResult == height) {
-                clearInterval(id);
+                clearInterval( IntervalId);
               } else {
                 compareResult=compareResult+0.5; 
                 elem.style.height = compareResult + 'rem'; 
@@ -29,12 +31,12 @@ class AccordionHandler{
               }
             }
         }else{
-            id= setInterval(frame, duration);
+             IntervalId= setInterval(frame, duration);
             function frame() {
               if (compareResult == 0) {
                 elem.style.display="none"
 
-                clearInterval(id);
+                clearInterval( IntervalId);
               } else {
                 compareResult=compareResult-0.5; 
                 elem.style.height = compareResult + 'rem'; 

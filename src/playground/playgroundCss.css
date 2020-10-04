@@ -1,0 +1,10 @@
+.flexDemo{
+    display: flex;
+    flex-direction: column;
+
+}
+.flexDemo div {
+   background-color: greenyellow;
+    border: hotpink solid;
+
+}

@@ -1,0 +1,67 @@
+
+
+.header-wrapper{
+    border-bottom : 1px solid #eee ;
+    background-color: var(--main-bg-color);
+
+    }
+#MenueBarContainer{
+    font-size: 2.5rem; 
+    font-weight: bold; 
+    pointer-events: all;
+    user-select: none;
+    height: 100% ;
+    width: 30%;
+align-items: center;
+right:1rem;
+}
+ .header-icon{
+    font-size: 3.5rem ; 
+    font-weight: bold ;
+    pointer-events: all ;
+    user-select: none ;
+}
+.header-icon:hover{
+background-color: rgba(20, 20, 20, 0.1);
+}
+#barsContainer{
+     padding: 0 1rem;
+
+}
+#header-Right{
+    width:100%;
+    direction:rtl;
+   display: flex;
+   flex-direction: row;
+   /* justify-content:initial; controlled by JS b/c malfunction*/
+}
+#header-Upper-left{
+    display: none ;
+}
+@media(min-width:895px){
+    #header-Upper-left{
+        display: flex;
+        /* background-color: red; */
+    }
+    .header-wrapper{
+        background-color: initial;
+ 
+    }
+    #hrHeader{
+        border : 4px solid  orange; 
+    }
+    #header-Right{
+width: 50%;
+    }
+    }
+.newAdId{
+    margin-bottom : 1rem;
+    border-radius : var(--borderRadius-greenButton);
+    
+}
+ 
+#header-Upper{
+    margin-left : 2rem ;
+    margin-right : 2rem;
+
+}

@@ -13,7 +13,7 @@ export const ModalExit = (props) => {
 
                 // e.stopPropagation()
                 // alert(idWrapper)
-                ModalStylerObj.toggleModal(props.id,e)
+                ModalStylerObj.toggleModal(props.id,e,props.openClass,props.closeClass)
                 
     }}>&times;</span>
     </div>

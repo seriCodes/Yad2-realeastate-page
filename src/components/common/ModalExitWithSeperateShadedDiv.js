@@ -5,11 +5,10 @@ export const ModalExitWithSeperateShadedDiv = (props) => {
     const ModalStylerObj= new ModalStyler()
 
     return (
-        <div class="Modal-X-button">
-        <span class="small-close-Modal" onClick={(e)=>
+        <div class="Modal-X-button"><span class="small-close-Modal" onClick={(e)=>
             {
                 // e.stopPropagation()
-                 ModalStylerObj.toggleModal(props.id,e)
+                 ModalStylerObj.toggleModal(props.id,e,props.toggledClass,props.closeClassTransition)
                 ModalStylerObj.shadedDivClickAftermodalToggled(e)
  
     }}>&times;</span>

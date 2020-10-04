@@ -1,0 +1,89 @@
+#modalUserFooter{
+ display : flex ;
+ flex-direction : row ;
+ justify-content: space-around;
+ margin-bottom: 1.6rem  ;
+ margin-top: 1.6rem ;
+}
+#user-welcome{
+    display : flex ;
+    flex-direction : column ;
+    align-items: center;
+        margin-top: 20px;
+}
+#newAdId-UserModal{
+
+ margin-top : 1rem  ;
+             margin-bottom : 1rem  ;
+             padding-top : 0.5rem  ;
+               padding-bottom: 0.5rem  ;
+               padding-left: 1rem  ;
+               padding-right:  1rem  ;
+           
+             border-radius: var(--borderRadius-greenButton);
+             font-size : 1.5rem  ;
+             font-weight : bold  ;
+             color : white  ; 
+             width : 45%  ;
+} 
+.modalUserSearchTopics{
+    padding-bottom: 0.5rem ;
+    padding-left: 1rem ;
+    padding-right:  2rem ;
+  background-color : #f9f9f9 ;   
+}
+.modalUserSearchTopics > div{
+     width : 100%  ; 
+
+     /* margin-top : 1rem  ; */
+
+}
+.modalUserSearchTopics > div > div{
+    margin-top:0.75rem;
+
+}
+.modalUserSearchHeadline{
+    font-size: 1.5rem;   font-weight: bold;
+}
+#userModal{
+    transition: width 0.2s linear;
+    width: 0%;
+}
+.user-modal{
+    /* transition: width 2s linear; */
+
+    position: fixed; 
+    top:0;
+    right:0;
+    background-color: #fff ;
+z-index: 1;
+direction:rtl;
+overflow-y : scroll;
+height: 100%;
+width: 90% !important;
+}
+
+
+@media (min-width: 666px){
+    .user-modal{
+        width: 50% !important;        
+    }
+ }
+@media (min-width: 1008px){
+    .user-modal{
+        width: 33% !important;  
+     }
+
+}
+.modalUserSearchContainer{
+    /* writing-mode: horizontal-tb; */
+    /* direction: rtl; */
+    /* text-align: right; */
+    align-items: end;
+
+}
+.width0{
+    width: 0% !important; 
+    /* transition: width 2s linear; */
+
+}

@@ -1,0 +1,131 @@
+:root {
+    --main-bg-color: coral;
+font-size: 16px;
+--borderRadius-greenButton:16px;
+
+  }
+  html {
+    height: 100%;
+  }
+
+  /* .content-container {
+    margin: 0 auto;
+    padding: 0 $m-size;
+    max-width: 1050px;
+    @media (max-width: $desktop-breakpoint) {
+        margin: 0 ;
+        padding: 0;
+        max-width: 3500px;
+    }
+}; */
+  body{
+    height: 100%;
+    /* border-style: solid;
+    border-color: blue;
+    border-width: 3px; */
+    /* margin: 0 auto;
+    padding: 0 10px;
+    max-width: 1050px;
+     @media (max-width: 1050px) {
+        margin: 0 ;
+        padding: 0;
+        max-width: 3500px;
+  }  */
+}
+.app-container{
+    /* background-color: greenyellow; */
+    display: grid;
+    grid-template-rows: 7.5rem auto fit-content(5rem);
+    grid-template-areas: "header"
+    "main"
+    "footer";
+/* padding-top: 3.5rem; */
+height: 100%;
+}
+
+.header{
+    grid-area: header;
+}
+.main-area-container{
+    /* box-sizing: border-box; */
+ grid-area: main;
+ background-color:#ededed;
+ min-height:30rem;
+ grid-template-areas:  "results ";
+ display:grid;
+ grid-template-columns:  100% ;
+ /* grid-template-columns: 1fr; */
+  /* 1fr; */
+ /*  ; */
+
+ justify-content:center;
+ /* align-items: center; */
+ min-height: 0;  
+  min-width: 0;   
+/* justify-content: center; */
+/* padding: 1rem 12px 1rem 12rem; */
+}
+
+.footer-area-container{
+     background-color: #363636 ;
+    color: white ;
+    
+ 
+    grid-area: footer;
+    /*
+    display:grid;
+    grid-template-rows: 3fr 1fr  ;
+    grid-template-areas:  footerLinks, footerSocialMedia ; */
+    
+}
+.FooterMenu-Container{
+    grid-area: footerLinks
+
+}
+.FooterShares{
+    grid-area: footerSocialMedia
+
+}
+
+.MainContent-Container{
+    grid-area: results
+}
+#left-sticky-ad{
+display: none;
+}
+@media (min-width: 666px){
+    .main-area-container{
+        grid-template-columns: 80%;
+        /* grid-template-areas:  "results ";
+
+        grid-template-columns:  1fr; */
+        /* background-color: greenyellow; */
+
+    }
+    .MainContent-Container{
+        grid-area: results
+    }
+    
+    .footer-area-container{
+
+    }
+}
+@media (min-width: 1008px){
+    .main-area-container{
+        /* grid-template-columns: 60%; */
+        grid-template-columns:  1fr 4fr 1fr;
+        grid-template-areas:  "stickyAd-left  results .";
+        
+
+        /* background-color: red; */
+
+    }
+    #left-sticky-ad{
+        grid-area: stickyAd-left;
+        display: block;
+
+    }
+}
+
+
+

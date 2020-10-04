@@ -40,8 +40,7 @@ break;
 
             }
             // 
-console.log("StickyPicture")
-        },3000)
+         },4000)
     })
 
 

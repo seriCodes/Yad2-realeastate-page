@@ -1,0 +1,101 @@
+:root{
+     --smartPhon-width:895px;
+}
+
+.FooterContainer{
+     display:grid;
+grid-template-columns: repeat(3 1fr);
+grid-template-rows: repeat(5 1fr);
+grid-template-areas: 
+"cl1 ... ..."
+"cl1 ... ..."
+ 
+"shares ... ... "
+"shares ... ..."
+"cc .. ..."
+
+; 
+
+ }
+.Links-footer-any{
+     /* text-align: right; */
+     grid-area: cl1;
+}
+.Links-column2{
+     
+     display: none;
+
+     grid-area: cl2;
+}
+.Links-column3{
+     display: none;
+     grid-area: cl3;
+
+}
+.Links-column4{
+     display: none;
+
+     grid-area: cl4;
+ 
+}
+#Social-Media-Container{
+     margin : 2.25rem 0.625rem 0.625rem 0.625rem  ;
+
+     grid-area: shares;
+
+}
+#CC{
+     grid-area: cc;
+ 
+}
+
+@media(min-width: 895px ){
+     .Links-column2{display: block;}
+
+     .Links-column3{ display: block; }
+     .Links-column4{ display: block; }
+     .Links-footer-any{text-align: inherit;}
+
+     #Social-Media-Container{
+           
+     }
+     
+     .FooterContainer{
+          grid-template-columns: repeat(8 1fr);
+grid-template-rows: repeat(6 1fr);
+
+          grid-template-areas: 
+          "cl1 cl1 cl2 cl2 cl3 cl3 cl4 cl4"
+          "cl1 cl1 cl2 cl2 cl3 cl3 cl4 cl4"
+          "cl1 cl1 cl2 cl2 cl3 cl3 cl4 cl4"
+          
+          "... ... ... shares shares ... ... ..."
+          "... ... ... shares shares ... ... ..."
+          " ... ... ... cc cc ... ... ..."; 
+          
+     }
+     
+     
+}
+
+#scrollUpArrow{
+     display:  flex  ;
+      justify-content :  space-around  ;
+      align-items :  center  ;
+
+}
+
+/* #Links-Container > :nth-child(n+3){
+   
+     display: none;
+}
+#Links-Container > :nth-child(n-2){
+   color: yellowgreen;
+     /* display: none; */
+     /* justify-content: start; 
+     align-self:flex-start;
+
+} */
+/* @media(){
+
+} */

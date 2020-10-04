@@ -70,12 +70,57 @@ console.log(color, size,height,weight)
         elem.style.color = color; 
         elem.style.fontFamily = "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Noto Sans,Ubuntu,Droid Sans,Helvetica Neue,sans-serif";
     }
-    toggleModal(id,e){ 
+    toggleModal(id,e,toggledClass,transitionCloseClass){ 
       e &&  e.stopPropagation()
 
-        var btn = document.getElementById(id)
-        btn.style.display=btn.style.display=="block"?"none":"block" ; 
-        console.log('toggleModal id check', id)
+        var ele = document.getElementById(id)
+        // ele.style.display=ele.style.display=="block"?"none":"block" ;
+        
+    //   ele.classList.contains("displayNone") && ele.classList.remove("displayNone")
+
+      if(!ele.classList.contains("displayNone")){
+console.log("toggleModal  block")
+        function handlerTransitionEnd () {
+            console.log("toggleModal handlerTransitionEnd")
+
+            console.log("transitionend")
+            // ele.style.display="none"
+
+            ele.classList.add("displayNone")
+
+            ele.classList.remove(toggledClass) 
+
+            ele.classList.remove(transitionCloseClass)
+
+            ele.removeEventListener("transitionend",  handlerTransitionEnd);  
+            console.dir(ele)
+   
+          } 
+          ele.addEventListener('transitionend',handlerTransitionEnd );
+
+  ele.classList.add(transitionCloseClass)
+
+      }else{
+        ele.classList.remove("displayNone")
+          console.log("else toggle")
+        setTimeout(function() {
+            // toggledClass &&  ele.classList.toggle(toggledClass)
+ ele.classList.add(toggledClass)
+        }, 10);
+
+      }
+        // console.log('idtoggleModal', id)
+        // console.log('idtoggl e', e)
+
+        // console.log('toggledClass', toggledClass)
+ 
+
+        
+        
+    // removeClass && ele.classList.remove(removeClass)
+
+ 
+
     }
     closeOutsideClick(elem,modal, buttonID, modalID,id3){
 
@@ -179,7 +224,7 @@ modal.style.display="none";
 
     }
   
-    makeWindowShadedClickBlocker(modalElementId){
+    makeWindowShadedClickBlocker(modalElementId,toggledClass,closeClassTransition){
         var shadedDiv = document.createElement("div");
 
         shadedDiv.id="shadedDiv"
@@ -210,7 +255,7 @@ modal.style.display="none";
         // shadedDivStyleLink(shadedDiv,{display:"none"})
         shadedDiv.remove();
 
-        toggleModalLink(modalElementId,e)
+        toggleModalLink(modalElementId,e,toggledClass,closeClassTransition)
 
         return false;
       }

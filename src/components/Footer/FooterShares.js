@@ -3,24 +3,16 @@ import {Button} from "../common/Button";
 import {ContainersStructure} from "../ContainersStructure";
 import {CircleIconButtons} from "../common/CircleIconButtons";
 import {v1 as uuidv1} from "uuid";
+import  './footerCss.css';
+ 
 
 export const FooterShares = () => {
 
     const ContainersStructureObj= new ContainersStructure()
-    useEffect(()=>{
-        let SocialMedia= document.getElementById("Social-Media-Container")
-        ContainersStructureObj.flexRow( SocialMedia,{"justifyContent":"space-around"})
-
-        ContainersStructureObj.keyValueStyleMaker(SocialMedia,{
-            "margin":"20px 10px 10px 10px",
-width:"30%",
-// alignSelf:"center"
-        })
+    useEffect(()=>{ 
 
         let FooterShares= document.getElementById("FooterShares")
-        ContainersStructureObj.flexColumn( FooterShares,{
-            alignItems:"center"
-        })
+ 
         FooterShares= document.getElementById("scrollUpArrow")
         ContainersStructureObj.keyValueStyleMaker( FooterShares,{
             "border-style":"solid",
@@ -32,23 +24,26 @@ width:"30%",
              "border-radius": "50%",
              width: "3.5rem",
               height: "3.5rem",
-            //   background: "white",
-             // border: 3px solid red,
-             display: "flex",
-             "justify-content": "space-around",
-             "align-items": "center",
+            
+            //  display: "flex",
+            //  "justify-content": "space-around",
+            //  "align-items": "center",
              'fontSize':"25px",
 
                 })
 
-    })
-    
-    //  <i class='fas fa-arrow-up' style='font-size:36px'></i>
+    }) 
+    //     <div class="FooterShares flexColumn-align-center" id="FooterShares"> </div>
     return (
-        <div id="FooterShares">
+    <> 
  
-
- <div id="Social-Media-Container">
+        {
+            //  
+                }
+ <div id="Social-Media-Container" 
+ class="flexRowSpaceAround"
+ >
+ 
  <div id="scrollUpArrow" class="">
  <i class="fa fa-arrow-up" aria-hidden="true" onClick={()=>{
        window.scrollTo({top: 0, behavior: 'smooth'});
@@ -72,11 +67,12 @@ width:"30%",
 
 } 
     </div>
-         <p id="CC"><b>
+        
+    <p id="CC"><b>
          © 2020 כל הזכויות שמורות סער סרי- תלפיות הייטק
          </b></p>
 
-        </div>
+         </>
     )
 }
 

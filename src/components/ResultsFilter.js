@@ -6,65 +6,51 @@ import React, {useState,useEffect} from 'react'
 import {ContainersStructure} from "./ContainersStructure";
 import {filterHandler} from "./filterHandler";
 import {v1 as uuidv1} from "uuid";
+import "./resultsFilter.css";
 
 
 export const ResultsFilter = (props) => {
-    const formId=  uuidv1();
+    // const formId=  uuidv1();
 
     const ContainersStructureObj= new ContainersStructure()
     const filterHandlerObj= new filterHandler()
 
     
-    useEffect(()=>{
-    
-    
- let filterForm=document.getElementById(formId)
-
- ContainersStructureObj.flexRow(filterForm,{"justifyContent":"space-around"})
-
- ContainersStructureObj.keyValueStyleMaker(filterForm,{
-    'background-color':"#808080	",
-// 'text-align':"left",
-"border-left":"4px solid rgba(0,0,0,.1)",
-"margin":"10px 10px 10px 10px",
-"box-shadow":'0 1px 6px 1px rgba(0,0,0,1.16)',
-'padding':"10px 10px 10px 10px",
-"font-size":"16px",
-"fontWeight":"bold",
-
-
-})
-
-})
+    useEffect(()=>{ })
     return (
-        <div id="ResultsFilter" class="ResultsFilter" >
+        <div class="ResultsFilter-container">
+        <h3  >איזה נכס תרצה לחפש?</h3> 
 
-
-        <form id={formId }
+        <form id="form-filter-Id"
+        class="ResultsFilter-from"
         onSubmit={(e)=>{
-         let filterInit= filterHandlerObj.makeFilterObject(e,formId )
+         let filterInit= filterHandlerObj.makeFilterObject(e,"form-filter-Id" )
       props.setFilter(filterInit)
         }
     }
     >
-    <div>
+    <div class="submit-container">
+    <label for="rooms">  hidden</label> 
     <input class="greenButton" type="submit" id="submitFilter" value="חפש"  dir="rtl"/>
     </div>
  
   <div>
   <label for="rooms">מקסימום חדרים</label><br/>
-  <input type="number" id="roomsSearchMax" name="roomsSearchMax" min="1" max="10" dir="rtl"/>
+  <input type="number" id="roomsSearchMax" name="roomsSearchMax" min="1" max="10" dir="rtl"  step="1"/>
   </div>
   <div>
   <label for="rooms">מינימום חדרים</label><br/>
-  <input type="number" id="roomsSearchMin" name="roomsSearchMin" min="1" max="10" dir="rtl"/>
+  <input type="number" id="roomsSearchMin" name="roomsSearchMin" min="1" max="10" dir="rtl"  step="1"/>
   </div>
 
   <div>
 
   <label for="rooms">מחיר </label><br/>
-  <input type="number" id="priceMax" name="priceMax" placeholder="עד מחיר" min="1" max="10000" dir="rtl"/>
-  <input type="number" id="priceMin"  name="priceMin" placeholder=" ממחיר " min="1" max="10000" dir="rtl"/>
+  <input class="price" type="number" id="priceMax" name="priceMax" placeholder="עד מחיר" min="1" max="10000" dir="rtl" step="100"/>
+  </div>
+  <div>
+  <label for="rooms">מחיר</label><br/>
+  <input class="price" type="number" id="priceMin"  name="priceMin" placeholder="ממחיר" min="1" max="10000" dir="rtl"  step="100"/>
 
   
    </div>

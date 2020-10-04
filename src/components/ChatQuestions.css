@@ -1,0 +1,71 @@
+:root{
+    --chatWindow-width:27rem
+}
+.float-chat-container{
+    display:none;
+}
+
+.float-chat-container-header{
+    background: #54B53E;
+}
+.after-hover-display{
+    display: inline;
+}
+
+@media(min-width:1008px){
+    .float-chat-container{
+        /* transition-property: width height; */
+        transition-property: min-width, min-height;
+
+        transition-duration: 0.5s;
+        transition-timing-function: linear;
+        display:block;
+        overflow: hidden;
+direction: rtl;
+color:white;
+        position: fixed;
+        bottom: 1rem;
+        left: 1rem;
+        z-index: 9999;
+        min-width:0px;
+        min-height:0px;
+       /* max-width: 112rem; */
+    }
+    .makeChatHigher{
+        min-height: 27rem;
+    }
+    .makeChatWider {
+        min-width: 27rem;
+    }
+
+    
+}
+.float-chat-container:hover{
+    min-width: var( --chatWindow-width);
+}
+.float-chat-container:hover .gotQuestion::after
+{ 
+    content: "תיק תק והתשובה אצלך!"; 
+}
+.float-chat-container-expanded{
+    min-width: var( --chatWindow-width);
+}
+
+
+.float-chat-container-input{
+    background: #fff;
+    display: table;
+    width: 100%;
+    color:black;
+
+}
+.QAinput{
+    width: 100%;
+    outline: none;
+    border: 0 ;
+    padding:7px;
+}
+ .common-QA-container{
+     display: block;
+ }
+

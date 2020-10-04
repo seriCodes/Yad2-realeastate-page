@@ -1,0 +1,14 @@
+.gridContainer{
+    display: grid;
+    grid-template-columns: 0, auto, 0;
+    /* justify-items: center; */
+align-items: center;
+}
+
+.quote {
+    border: 1px solid #fa923f;
+    background: #ffbd87;
+    font-family: sans-serif;
+    padding: 1rem;
+    border-radius: 5px;
+  }

@@ -10,19 +10,9 @@
 html {
   /*     height: 100vh; */
       height: 100%;
-
+  /* direction: rtl; */
 }
-/* body {
-      height: 100vh;
-      margin: 0;
-      padding: 0;
-      background-color: #FFCC00;
-  border-style: solid;
-  border-color: blue;
-  border-width: 3px;
-
-
-  } */
+ 
 .App-logo {
   height: 40vmin;
   pointer-events: none;
@@ -57,15 +47,11 @@ html {
     transform: rotate(360deg);
   }
 }
-.buttonSmallImages {
-  height: 100%;
-  width:80px;
 
-  /* border-style:groove;
-      border-color: greenyellow;
-   border-width: 6px; */
-}
-
-/* body > #root > div {
-  height: 100vh;
-} */
+ .gridResultsPlayground{
+   display: grid;
+   grid-template-columns: 100%;
+   grid-template-areas:  "results . ";
+   justify-content:center;
+  
+ }

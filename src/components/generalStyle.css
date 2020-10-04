@@ -1,4 +1,29 @@
 /* only reapeted elements attributes common attributes which barely change*/
+.flexRowSpaceAround{
+display:flex ;
+flex-direction:row;
+justify-content:space-around;
+}
+.flexrowSpace-between{
+  display:flex ;
+flex-direction:row;
+justify-content:space-between;
+
+}
+
+.flexColumn{
+  display:flex ;
+flex-direction:column;
+}
+.flexColumn-align-center{
+  display:flex ;
+  flex-direction:column;
+align-items: center;  
+}
+.alignItems {
+  align-items: center;
+}
+
 .small-close-Modal{
   /* color:green;  */
   font-size:32px;;
@@ -28,7 +53,7 @@
 
 }
 .Ad-hover:hover{
-    /* background-color: rgba(15, 202, 128,0.99) */
+    background-color: rgba(15, 202, 128,0.66)
 }
 .button-hover:hover{
   background-color:green ;
@@ -38,10 +63,7 @@
   user-select: none;
   cursor:pointer;
 }
-body{
-  /* background-color: yellow; */
-
-}
+ 
 
 .MenueBarContainer {
   /* margin: 9px 0; */
@@ -66,5 +88,15 @@ float:right ;
 
 .user-modal::-webkit-scrollbar { 
   display: none; 
-} 
+}  
+.user-modal{
+
+  /* transition: width 2s linear; */
+
+}
+/* .user-modal{
+  width:100%;
+  
+} */
+
 

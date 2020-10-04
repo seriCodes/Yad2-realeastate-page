@@ -39,9 +39,10 @@ let id= uuidv1();
     // console.log(isBigScreen)
     } 
     window.addEventListener('resize', reportWindowSize); 
-
+let elementClasses= `column ${prop.class}`
+    //  {props.side}
     return (
-        <div id={id}>
+        <div class={elementClasses} id={id}>
             {prop.children}
             {prop.el}
         </div>
