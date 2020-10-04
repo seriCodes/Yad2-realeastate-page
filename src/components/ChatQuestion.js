@@ -85,7 +85,7 @@ switch(size){
         <span onClick={()=>{            sizeHandler("close", "commonQA" ) }}>X </span>
     </div>
     <div class="float-chat-container-input"> 
-    <input   class="QAinput" type="search" aria-label="הקלד את שאלתך כאן. לחץ על Enter כדי לחפש." placeholder="הקלד את שאלתך כאן" maxlength="250"/>
+    <input   class="QAinput" type="search" aria-label="הקלד את שאלתך כאן בבקשה. לחץ על Enter כדי לחפש." placeholder="הקלד את שאלתך כאן" maxlength="250"/>
      </div>
  
      <div id="commonQA" class="displayNone  " >
